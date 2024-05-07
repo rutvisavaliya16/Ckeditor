@@ -1,0 +1,42 @@
+﻿@model WebApplication8.Models.ImageModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<script src="~/Scripts/ckeditor.js"></script>
+
+<h2>CKEditor</h2>
+
+<textarea id="editor"></textarea>
+
+<script>
+
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: '/Home/UploadImage'
+            },
+            fontFamily: {
+                options: [
+                   /* 'default',*/
+                    'Poppins, sans-serif',
+                    //'Helvetica, Arial, sans-serif',
+                    //'Arial, Helvetica, sans-serif',
+                    'Times New Roman, Times, serif',
+                    'Courier New, Courier, monospace',
+                    'Georgia, serif',
+                    'Verdana, Geneva, sans-serif',
+                    'Tahoma, Geneva, sans-serif',
+                    'Comic Sans MS, cursive',
+                    'Impact, Charcoal, sans-serif'
+                ]
+            },
+        })
+        .catch(error => {
+            console.error(error);
+        });
+   
+
+</script>
